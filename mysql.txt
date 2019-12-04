@@ -1,0 +1,15 @@
+CREATE TABLE `banca`.`utilizatori` (
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `nume` VARCHAR(100) NULL,
+  `prenume` VARCHAR(100) NULL,
+  `mail` VARCHAR(150) NULL,
+  `telefon` CHAR(10) NULL,
+  `status` TINYINT(1) NULL DEFAULT 1,
+  PRIMARY KEY (`id`),
+  UNIQUE INDEX `mail_UNIQUE` (`mail` ASC) VISIBLE)
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8;
+
+
+INSERT INTO `banca`.`utilizatori` (`id`, `nume`, `prenume`, `mail`, `telefon`, `status`) VALUES ('1', 'popescu', 'ionut', 'popescu.ionut@yahoo.com', '0723456212', '1');
+INSERT INTO `banca`.`utilizatori` (`id`, `nume`, `prenume`, `mail`, `telefon`, `status`) VALUES ('2', 'georgescu', 'dan', 'georgescu.dan@yahoo.com', '0723456222', '1');
