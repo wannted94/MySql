@@ -13,3 +13,30 @@ DEFAULT CHARACTER SET = utf8;
 
 INSERT INTO `banca`.`utilizatori` (`id`, `nume`, `prenume`, `mail`, `telefon`, `status`) VALUES ('1', 'popescu', 'ionut', 'popescu.ionut@yahoo.com', '0723456212', '1');
 INSERT INTO `banca`.`utilizatori` (`id`, `nume`, `prenume`, `mail`, `telefon`, `status`) VALUES ('2', 'georgescu', 'dan', 'georgescu.dan@yahoo.com', '0723456222', '1');
+
+
+
+
+CREATE TABLE `facultate`.`studenti` (
+  `idstudent` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `nr_matricol` VARCHAR(15) NULL,
+  `nume` VARCHAR(45) NULL,
+  `prenume` VARCHAR(45) NULL,
+  `cnp` VARCHAR(13) NULL,
+  `data_nasterii` DATE NOT NULL,
+  PRIMARY KEY (`idstudent`),
+  UNIQUE INDEX `nr_matricol_UNIQUE` (`nr_matricol` ASC) VISIBLE)
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8;
+
+
+
+SELECT * FROM facultate.studenti;   selecteaza toate campurile ( * )
+
+
+
+
+ALTER TABLE `facultate`.`studenti` 
+ADD COLUMN `email` VARCHAR(100) NULL AFTER `data_nasterii`,               am adaugat email unic 
+ADD UNIQUE INDEX `email_UNIQUE` (`email` ASC) INVISIBLE;
+;
